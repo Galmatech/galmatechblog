@@ -1,7 +1,8 @@
 # Variables
+PROJECT = www_project-galmatechblog
 DOCKER = docker
 DOCKER_COMPOSE = docker-compose
-EXEC = $(DOCKER) exec -w /var/www/project www_project-name
+EXEC = $(DOCKER) exec -w /var/www/project $(PROJECT)
 PHP = $(EXEC) php
 COMPOSER = $(EXEC) composer
 NPM = $(EXEC) npm
@@ -63,11 +64,11 @@ check: ## Run PHP CS Fixer with diff
 ## —— 🐳 Docker ——
 start: ## Start app
 	$(MAKE) docker-start
-docker-start:
+docker-start: ## Build a container and start app
 	$(DOCKER_COMPOSE) up -d
 	@echo "$(COLOUR_GREEN)The containers are now started.$(COLOUR_END)"
-bash:
-	$(DOCKER) exec -ti www_galamatechblog www_project-name
+bash: ## Run bash
+	$(DOCKER) exec -ti $(PROJECT) bash
 
 stop: ## Stop app
 	$(MAKE) docker-stop
