@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\DataFixtures;
 
-use App\Entity\Post;
+use App\Entity\Post\Post;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
