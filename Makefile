@@ -33,6 +33,11 @@ tests: ## Run all tests
 	$(PHP) bin/phpunit --testdox tests/Functional/
 	$(PHP) bin/phpunit --testdox tests/E2E/
 
+testdox: ## Run all tests
+	$(PHP) bin/phpunit --testdox tests/Unit/
+	$(PHP) bin/phpunit --testdox tests/Functional/
+
+
 database-init-test: ## Init database for test
 	$(SYMFONY_CONSOLE) d:d:d --force --if-exists --env=test
 	$(SYMFONY_CONSOLE) d:d:c --env=test

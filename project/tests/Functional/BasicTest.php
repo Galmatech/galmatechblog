@@ -8,7 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class BasicTest extends WebTestCase
 {
-    public function testUnitEnvironnementIsOk(): void
+    public function testFunctionalEnvironnementIsOk(): void
     {
         $client = static::createClient();
         $client->request('GET', '/');
